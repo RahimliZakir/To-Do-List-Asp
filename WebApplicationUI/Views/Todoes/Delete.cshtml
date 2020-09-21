@@ -1,0 +1,59 @@
+﻿@model WebApplicationUI.Models.Entity.Todo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-center" style="background-color: white; padding: 1% 0;">Bazadakı məlumatın silinmə prossesi</h1>
+
+<div class="d-flex justify-content-center">
+    <h3 class="text-center" style="background-color: white; padding: 1% 0; width:65%;">Məlumatları silmək istədiyinizdən əminsiniz?</h3>
+</div>
+
+<div class="d-flex flex-column align-items-center">
+    <hr />
+    <dl class="row" style="background-color: white; width: 60%; padding: 1.5% 0;">
+        <dt class = "col-6">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-6">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-6">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-6">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-6">
+            @Html.DisplayNameFor(model => model.ResponsiblePersons)
+        </dt>
+        <dd class = "col-6">
+            @Html.DisplayFor(model => model.ResponsiblePersons)
+        </dd>
+        <dt class = "col-6">
+            @Html.DisplayNameFor(model => model.IsCompleted)
+        </dt>
+        <dd class = "col-6">
+            @Html.DisplayFor(model => model.IsCompleted)
+        </dd>
+        <dt class = "col-6">
+            @Html.DisplayNameFor(model => model.CreatedUserId)
+        </dt>
+        <dd class = "col-6">
+            @Html.DisplayFor(model => model.CreatedUserId)
+        </dd>
+        <dt class = "col-6">
+            @Html.DisplayNameFor(model => model.DeletedUserId)
+        </dt>
+        <dd class = "col-6">
+            @Html.DisplayFor(model => model.DeletedUserId)
+        </dd>
+    </dl>
+    
+    <form class="text-center" asp-action="Delete" style="background-color: white; padding: 1.5%;">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
